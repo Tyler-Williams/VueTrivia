@@ -7,7 +7,9 @@
       <h1 class="bits">Quiz Game</h1>
       <div class="w-50 mx-auto" id="btn-container">
         <button @click="getQuestions()" class="action-button animate green w-100 mb-3">Play</button>
-        <button class="action-button animate blue w-100">Ranking</button>
+        <router-link to="/score">
+          <button class="action-button animate blue w-100">Ranking</button>
+        </router-link>
       </div>
     </div>
   </div>

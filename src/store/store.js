@@ -11,7 +11,12 @@ export const store = new Vuex.Store({
     },
     questions: []
   },
-  getters: {},
+  getters: {
+    getScore (state) {
+      const total = state.results.correct_answers + state.results.incorrect_answers
+      return `${state.results.correct_answers} / ${total}`
+    }
+  },
   mutations: {
     //  TODO: OPTIMIZE
     translateData: (state, questions) => {
@@ -29,7 +34,7 @@ export const store = new Vuex.Store({
     },
     setResults (state, answers) {
       state.results.correct_answers = answers.corrects
-      state.results.incorrect_answers = answers.incorrect
+      state.results.incorrect_answers = answers.incorrects
     }
   },
   actions: {
